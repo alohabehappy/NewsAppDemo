@@ -9,5 +9,6 @@ target 'NewsApp' do
 	pod 'MBProgressHUD', '~> 1.1.0'
 	pod 'TPKeyboardAvoiding'
 	pod 'SwiftKeychainWrapper'
+	pod 'SWXMLHash', '~> 4.7.0'
 
 end
