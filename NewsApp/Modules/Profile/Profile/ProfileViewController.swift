@@ -8,10 +8,20 @@
 
 import UIKit
 
+protocol ProfileViewControllerDelegate: class {
+	func didLogout()
+}
+
 class ProfileViewController: UIViewController {
+	
+	weak var delegate: ProfileViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+	
+	@IBAction func logoutPressed(_ sender: UIButton) {
+		delegate?.didLogout()
+	}
 
 }
