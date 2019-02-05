@@ -11,10 +11,6 @@ import CoreData
 
 final class PersistenceManager {
 	
-	enum ContextType {
-		case main, background
-	}
-	
 	private init() {}
 	static let shared = PersistenceManager()
 	
@@ -63,4 +59,12 @@ final class PersistenceManager {
 		}
 	}
 	
+	func fetchFirst<T: NSManagedObject>(_ objectType: T.Type) -> T? {
+		return fetch(objectType).first
+	}
+	
+	func delete(_ object: NSManagedObject) {
+		context.delete(object)
+		save()
+	}
 }

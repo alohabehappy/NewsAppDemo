@@ -20,6 +20,10 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
     }
 	
+	@IBAction func favoritesPressed(_ sender: UIButton) {
+		print(#function)
+	}
+	
 	@IBAction func logoutPressed(_ sender: UIButton) {
 		delegate?.didLogout()
 	}

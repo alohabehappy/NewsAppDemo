@@ -12,7 +12,6 @@ import CoreData
 @objc(UserEntity)
 public class UserEntity: NSManagedObject {
 
-	@NSManaged public var email: String?
-	@NSManaged public var favorites: NSSet?
+	@NSManaged public var email: String
 	
 }

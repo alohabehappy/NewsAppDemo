@@ -230,6 +230,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c1a-hp-RaC"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="tIy-6z-7oh" id="SA2-rh-qch"/>
+                        <outlet property="passwordTextField" destination="sG1-ky-hZo" id="TUc-ml-dYk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXv-AZ-fAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,6 +259,9 @@
                                         <state key="normal" title="Favorites">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="favoritesPressed:" destination="xKz-vB-BPR" eventType="touchUpInside" id="UhR-xX-Ra6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGj-yJ-Qwi">
                                         <rect key="frame" x="0.0" y="62" width="262.5" height="40"/>
