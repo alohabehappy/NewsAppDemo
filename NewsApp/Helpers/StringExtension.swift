@@ -16,4 +16,15 @@ extension String {
 		return dateFormatter.date(from: self)
 	}
 	
+	func removeHtmlTags() -> String {
+		return replacingOccurrences(
+			of: "<[^>]+>",
+			with: "",
+			options: .regularExpression,
+			range: nil)
+	}
+	
+	func trim() -> String {
+		return trimmingCharacters(in: .whitespacesAndNewlines)
+	}
 }

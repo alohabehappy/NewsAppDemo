@@ -19,23 +19,6 @@ final class FeedProvider {
 	let reachability = Reachability()
 	
 	init() {
-		NotificationCenter.default.addObserver(self, selector: #selector(contextObjectsDidChange(_:)), name: Notification.Name.NSManagedObjectContextObjectsDidChange, object: nil)
-		
-		NotificationCenter.default.addObserver(self, selector: #selector(contextWillSave(_:)), name: Notification.Name.NSManagedObjectContextWillSave, object: nil)
-		
-		NotificationCenter.default.addObserver(self, selector: #selector(contextDidSave(_:)), name: Notification.Name.NSManagedObjectContextDidSave, object: nil)
-	}
-	
-	@objc func contextObjectsDidChange(_ notification: Notification) {
-		print(notification)
-	}
-	
-	@objc func contextWillSave(_ notification: Notification) {
-		print(notification)
-	}
-	
-	@objc func contextDidSave(_ notification: Notification) {
-		print(notification)
 	}
 	
 	func fetchHubs(completion: @escaping FetchHubsCompletion) {

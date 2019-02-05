@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller-->
+        <!--Hubs-->
         <scene sceneID="4Rk-7L-Iiw">
             <objects>
                 <viewController id="ofb-Hn-8tz" customClass="FeedViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ulX-yU-6JL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eaG-4m-3dS"/>
+                    <navigationItem key="navigationItem" title="Hubs" id="eaG-4m-3dS"/>
                     <connections>
                         <outlet property="tableView" destination="A2X-rm-6l9" id="mjG-vy-ZCA"/>
                     </connections>
@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="584.79999999999995" y="-114.69265367316342"/>
         </scene>
-        <!--Profile Container View Controller-->
+        <!--Profile-->
         <scene sceneID="PFK-pE-fh7">
             <objects>
                 <viewController id="maE-Za-CJ0" customClass="ProfileContainerViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NUv-HF-J7S"/>
                     </view>
-                    <navigationItem key="navigationItem" id="M3j-3w-7V9"/>
+                    <navigationItem key="navigationItem" title="Profile" id="M3j-3w-7V9"/>
                     <connections>
                         <segue destination="uGk-Go-1wz" kind="show" identifier="favorites" id="u1l-rR-ldT"/>
                     </connections>

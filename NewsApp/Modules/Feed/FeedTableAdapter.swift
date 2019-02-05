@@ -20,9 +20,9 @@ final class FeedTableAdapter: BaseTableAdapter {
 		self.items = items
 		self.delegate = delegate
 		
-		// register cells
 		tableView.register(UINib(nibName: "HubTableViewCell", bundle: nil),
 						   forCellReuseIdentifier: HubTableViewCell.identifier)
+		tableView.rowHeight = UITableView.automaticDimension
 		
 		refresh()
 	}

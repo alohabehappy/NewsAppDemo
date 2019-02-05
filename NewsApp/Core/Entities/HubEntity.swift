@@ -34,7 +34,7 @@ extension HubEntity {
 		self.title = xml[Keys.title].element?.text ?? ""
 		self.link = xml[Keys.link].element?.text ?? ""
 		self.date = xml[Keys.date].element?.text.dateFromHabrRss() ?? Date()
-		self.text = xml[Keys.text].element?.text ?? ""
+		self.text = xml[Keys.text].element?.text.removeHtmlTags().trim() ?? ""
 	}
 
 }
