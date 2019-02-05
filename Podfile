@@ -10,5 +10,6 @@ target 'NewsApp' do
 	pod 'TPKeyboardAvoiding'
 	pod 'SwiftKeychainWrapper'
 	pod 'SWXMLHash', '~> 4.7.0'
+	pod 'ReachabilitySwift'
 
 end

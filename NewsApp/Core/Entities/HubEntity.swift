@@ -1,22 +1,27 @@
 //
-//  HubEntity.swift
-//  NewsApp
+//  HubEntity+CoreDataClass.swift
+//  
 //
 //  Created by Vadim on 01/02/2019.
-//  Copyright © 2019 alohabehappy. All rights reserved.
+//
 //
 
 import Foundation
+import CoreData
 import SWXMLHash
 
-final class HubEntity {
+@objc(HubEntity)
+public class HubEntity: NSManagedObject {
+
+	@NSManaged public var title: String
+	@NSManaged public var link: String
+	@NSManaged public var date: Date
+	@NSManaged public var text: String
 	
-	var title: String
-	var link: String
-	var date: Date
-	var text: String
-	
-	// MARK: - XML
+}
+
+// MARK: - XML
+extension HubEntity {
 	
 	private enum Keys {
 		static let title = "title"
@@ -25,11 +30,11 @@ final class HubEntity {
 		static let text = "description"
 	}
 	
-	init(xml: XMLIndexer) {
+	func populateFromXML(_ xml: XMLIndexer) {
 		self.title = xml[Keys.title].element?.text ?? ""
 		self.link = xml[Keys.link].element?.text ?? ""
 		self.date = xml[Keys.date].element?.text.dateFromHabrRss() ?? Date()
 		self.text = xml[Keys.text].element?.text ?? ""
 	}
-	
+
 }

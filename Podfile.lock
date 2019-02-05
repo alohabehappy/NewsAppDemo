@@ -1,5 +1,6 @@
 PODS:
   - MBProgressHUD (1.1.0)
+  - ReachabilitySwift (4.3.0)
   - SnapKit (4.0.1)
   - SwiftKeychainWrapper (3.2.0)
   - SWXMLHash (4.7.6)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - MBProgressHUD (~> 1.1.0)
+  - ReachabilitySwift
   - SnapKit (~> 4.0.0)
   - SwiftKeychainWrapper
   - SWXMLHash (~> 4.7.0)
@@ -15,6 +17,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MBProgressHUD
+    - ReachabilitySwift
     - SnapKit
     - SwiftKeychainWrapper
     - SWXMLHash
@@ -22,11 +25,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   SWXMLHash: f6e0933ce74f2626669dc544851bc9fc1941670d
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: d3549fc5e94ba488b91c3ba59fc2da794775983e
+PODFILE CHECKSUM: e329176870ea2704634852100b2a86370f31f82e
 
 COCOAPODS: 1.5.3

@@ -17,8 +17,12 @@
 		DD4E3A95220460C100B54DFD /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E3A94220460C100B54DFD /* FeedViewController.swift */; };
 		DD4E3A97220460D000B54DFD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E3A96220460D000B54DFD /* FavoritesViewController.swift */; };
 		DD4E3A9A2204677E00B54DFD /* HabrRSSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E3A992204677E00B54DFD /* HabrRSSClient.swift */; };
-		DD4E3A9E22046B7B00B54DFD /* HubEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E3A9D22046B7B00B54DFD /* HubEntity.swift */; };
 		DD4E3AA122046D2000B54DFD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E3AA022046D2000B54DFD /* StringExtension.swift */; };
+		DDA756032204778A0014CDCB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDA756012204778A0014CDCB /* Model.xcdatamodeld */; };
+		DDA756082204786A0014CDCB /* HubEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA756042204786A0014CDCB /* HubEntity.swift */; };
+		DDA756092204786A0014CDCB /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA756052204786A0014CDCB /* UserEntity.swift */; };
+		DDA7560D220479040014CDCB /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA7560C220479040014CDCB /* PersistenceManager.swift */; };
+		DDA7560F22047C280014CDCB /* FeedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA7560E22047C270014CDCB /* FeedProvider.swift */; };
 		E14A2FDD147636B942DEDCC4 /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45DFD05A9F8EAC930178FBA /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +41,12 @@
 		DD4E3A94220460C100B54DFD /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DD4E3A96220460D000B54DFD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		DD4E3A992204677E00B54DFD /* HabrRSSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabrRSSClient.swift; sourceTree = "<group>"; };
-		DD4E3A9D22046B7B00B54DFD /* HubEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubEntity.swift; sourceTree = "<group>"; };
 		DD4E3AA022046D2000B54DFD /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		DDA756022204778A0014CDCB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DDA756042204786A0014CDCB /* HubEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HubEntity.swift; path = /Users/vadim/Dev/Sandbox/NewsApp/NewsApp/Core/Entities/HubEntity.swift; sourceTree = "<absolute>"; };
+		DDA756052204786A0014CDCB /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserEntity.swift; path = /Users/vadim/Dev/Sandbox/NewsApp/NewsApp/Core/Entities/UserEntity.swift; sourceTree = "<absolute>"; };
+		DDA7560C220479040014CDCB /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		DDA7560E22047C270014CDCB /* FeedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProvider.swift; sourceTree = "<group>"; };
 		E45DFD05A9F8EAC930178FBA /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,6 +201,8 @@
 			children = (
 				DD4E3A9C22046B5500B54DFD /* Entities */,
 				DD4E3A9B22046B4500B54DFD /* Networking */,
+				DDA75600220477810014CDCB /* Persistence */,
+				DDA7560E22047C270014CDCB /* FeedProvider.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -208,7 +218,8 @@
 		DD4E3A9C22046B5500B54DFD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				DD4E3A9D22046B7B00B54DFD /* HubEntity.swift */,
+				DDA756042204786A0014CDCB /* HubEntity.swift */,
+				DDA756052204786A0014CDCB /* UserEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -219,6 +230,15 @@
 				DD4E3AA022046D2000B54DFD /* StringExtension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DDA75600220477810014CDCB /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				DDA756012204778A0014CDCB /* Model.xcdatamodeld */,
+				DDA7560C220479040014CDCB /* PersistenceManager.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +320,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NewsApp/Pods-NewsApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -310,6 +331,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -350,13 +372,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4E3A912204609F00B54DFD /* LoginViewController.swift in Sources */,
+				DDA756092204786A0014CDCB /* UserEntity.swift in Sources */,
 				DD4E3A8F2204608400B54DFD /* ProfileContainerViewController.swift in Sources */,
 				DD4E3AA122046D2000B54DFD /* StringExtension.swift in Sources */,
+				DDA756082204786A0014CDCB /* HubEntity.swift in Sources */,
+				DDA7560D220479040014CDCB /* PersistenceManager.swift in Sources */,
 				DD4E3A9A2204677E00B54DFD /* HabrRSSClient.swift in Sources */,
 				DD4E3A95220460C100B54DFD /* FeedViewController.swift in Sources */,
 				DD4E3A93220460B100B54DFD /* ProfileViewController.swift in Sources */,
 				DD4E3A97220460D000B54DFD /* FavoritesViewController.swift in Sources */,
-				DD4E3A9E22046B7B00B54DFD /* HubEntity.swift in Sources */,
+				DDA7560F22047C280014CDCB /* FeedProvider.swift in Sources */,
+				DDA756032204778A0014CDCB /* Model.xcdatamodeld in Sources */,
 				DD37C1F1220456E1001D4DDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +575,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DDA756012204778A0014CDCB /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DDA756022204778A0014CDCB /* Model.xcdatamodel */,
+			);
+			currentVersion = DDA756022204778A0014CDCB /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD37C1E5220456E1001D4DDE /* Project object */;
 }

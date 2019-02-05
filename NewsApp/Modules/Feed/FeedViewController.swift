@@ -10,13 +10,14 @@ import UIKit
 
 class FeedViewController: UIViewController {
 	
-	let client = HabrRSSClient()
+	let provider = FeedProvider()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		client.getRSSFeed { (hubs) in
+		provider.fetchHubs { (hubs, error) in
 			print(hubs)
+			print(error ?? "")
 		}
     }
 
