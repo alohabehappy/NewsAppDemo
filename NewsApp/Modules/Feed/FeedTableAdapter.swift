@@ -6,6 +6,7 @@ import UIKit
 
 protocol FeedTableAdapterDelegate: class {
 	func didSelectItem(_ item: HubViewModel)
+	func didLongPressItem(_ item: HubViewModel)
 }
 
 final class FeedTableAdapter: BaseTableAdapter {
@@ -23,6 +24,9 @@ final class FeedTableAdapter: BaseTableAdapter {
 		tableView.register(UINib(nibName: "HubTableViewCell", bundle: nil),
 						   forCellReuseIdentifier: HubTableViewCell.identifier)
 		tableView.rowHeight = UITableView.automaticDimension
+		
+		let longPress = UILongPressGestureRecognizer(target: self, action: #selector(tableViewLongPressed(_:)))
+		tableView.addGestureRecognizer(longPress)
 		
 		refresh()
 	}
@@ -49,7 +53,20 @@ final class FeedTableAdapter: BaseTableAdapter {
 	// MARK: - UITableViewDelegate
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
 		let item = items[indexPath.row]
 		delegate?.didSelectItem(item)
+	}
+	
+	@objc func tableViewLongPressed(_ recognizer: UILongPressGestureRecognizer) {
+		let location = recognizer.location(in: tableView)
+		guard let indexPath = tableView?.indexPathForRow(at: location) else {
+			return
+		}
+		
+		if recognizer.state == .ended {
+			let item = items[indexPath.row]
+			delegate?.didLongPressItem(item)
+		}
 	}
 }
